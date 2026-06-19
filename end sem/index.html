@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Reverse a Number</title>
+</head>
+<body>
+    <h2>Reverse a Number</h2>
+    <button onclick="run()">Run Program</button>
+    <p id="res" style="font-weight: bold;"></p>
+
+    <script>
+        function run() {
+            let num = parseInt(prompt("Enter a number to reverse:"));
+            let temp = Math.abs(num);
+            let reversed = 0;
+
+            while (temp > 0) {
+                let remainder = temp % 10;
+                reversed = (reversed * 10) + remainder;
+                temp = Math.floor(temp / 10);
+            }
+
+            if (num < 0) reversed *= -1;
+
+            document.getElementById("res").innerHTML = 
+                `Original Number: ${num} <br> Reversed Number: <strong>${reversed}</strong>`;
+        }
+    </script>
+</body>
+</html>
